@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+    </script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <style>
+        body {
+            margin-top: 100px;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <div class="container">
+        {% if message %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        <div class="row mb-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header bg-dark text-light">
+                        Welcome to TFC Blog
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"> Welcome | Selamat Datang </h5>
+                        <p class="card-text">
+                            TFC is a competitive programming community based in Indonesia. In our mission to enlighten
+                            your
+                            difficult task of mastering competitive programming, we have created this blog to assist
+                            you. The
+                            purpose of this site is to share tips and tricks on competitive programming which may range
+                            from
+                            Algorithm and Data Structure tutorials to Problem Statement and Discussion. By contributing
+                            to this
+                            blog, you are contributing to the entire competitive programming community in Indonesia.
+                            Therefore,
+                            we await your interesting contents. Good luck and most importantly have fun!
+                        </p>
+                        {% if not user.is_authenticated %}
+                        <p class="card-text">
+                            If this is your first time here, you can <a class="link-primary text-decoration-none"
+                                href="{% url 'blog:register' %}">
+                                register</a> here, or you can <a class="link-primary text-decoration-none"
+                                href="{% url 'blog:login' %}">
+                                login</a>
+                            here if you already have an account.
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-8">
+                <div class="card mb-3">
+                    <div class="card-header bg-dark text-light">
+                        Latest Blogs
+                    </div>
+                    {% for post in latest_posts %}
+                    <div class="card-body border-top">
+                        <h5 class="card-title"> <a class = "link-secondary text-decoration-none" href = "{% url 'blog:view' blog_id=post.id %}"> {{post.title}} </a> </h5>
+                        <p class="card-text" style = "font-size: 12px">
+                            <b>{{post.author}}</b> at {{post.created_on}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header bg-dark text-light">
+                        Announcements
+                    </div>
+                    {% for announcement in announcements %}
+                    <div class="card-body border-top">
+                        <p class="card-text">
+                            <span style = "font-size:12px;"> <b>{{announcement.author}}</b> at {{announcement.created_on}} </span>
+                            {{announcement.content | safe}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("#navbar").load("nav");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width,initial-scale=1">
+    <title> TFC </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/05f9009fe4.js"></script>
+</head>
+
+<body>
+    <section class="header" id="header">
+        <nav>
+            <a href="/"><img class="logo" src="{% static 'logo.png' %}"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#members">MEMBERS</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="{% url 'discord' %}">DISCORD</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="hero-box parallax">
+            <h1>TFC Fan Club</h1>
+            <p>Competitive Programming Union</p>
+            <a href="#about" class="hero-btn">Learn More</a>
+        </div>
+    </section>
+    <section class="members" id="members">
+        <h1>TFC Members</h1>
+        <p>And of course, there's Tzaph</p>
+        <div class="row">
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Maxi.jpg' %});">
+                <h3> <a href = "https://ksn.toki.id/statistik/peserta/908"> Maximilliano Utomo Quok </a></h3>
+                <p>OSN 2019 - TOKI 2022</p>
+            </div>
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Jv.jpg' %});">
+                <h3> <a href ="https://ksn.toki.id/statistik/peserta/1037"> Joshua Adrian Cahyono </a></h3>
+                <p>KSN 2020 - TOKI 2022</p>
+            </div>
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Drew.jpg' %});">
+                <h3> <a href="https://ksn.toki.id/statistik/peserta/1111"> Andrew Kwok </a> </h3>
+                <p>KSN 2020 - TOKI 2022</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Metal.jpg' %});">
+                <h3> <a href = "https://ksn.toki.id/statistik/peserta/1040"> Matthew Allan </a></h3>
+                <p>KSN 2020 - TOKI 2024</p>
+            </div>
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Josh.jpg' %});">
+                <h3> <a href="https://ksn.toki.id/statistik/peserta/1362"> Joshua James </a> </h3>
+                <p>KSN 2021 - TOKI 2022</p>
+            </div>
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Gilang.jpg' %});">
+                <h3><a href = "https://ksn.toki.id/statistik/peserta/1026"> Mahartha Gemilang </a></h3>
+                <p>KSN 2020 - TOKI 2022</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Bertlim.jpg' %});">
+                <h3> <a href = "https://ksn.toki.id/statistik/peserta/1056"> Edbert Halim </a> </h3>
+                <p>KSN 2021 - TOKI 2022</p>
+            </div>
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Joel.jpg' %});">
+                <h3> <a href = "https://ksn.toki.id/statistik/peserta/1364"> Joel Gunawan </a> </h3>
+                <p>KSN 2021 - TOKI 2023</p>
+            </div>
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Zanite.jpg' %});">
+                <h3> <a href = "https://ksn.toki.id/statistik/peserta/1334"> Albert Yulius Ramahalim </a></h3>
+                <p>KSN 2021 - TOKI 2022</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Clay.jpg' %});">
+                <h3> <a href = "https://ksn.toki.id/statistik/peserta/1048"> Clayton Fernalo </a></h3>
+                <p>KSN 2020 - TOKI 2022</p>
+            </div>
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Mahez.jpg' %});">
+                <h3> <a> Hisyam Maheswara </a> </h3>
+                <p></p>
+            </div>
+            <div class="members-col"
+                style="background-image:linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'Members/Kelven.jpg' %});">
+                <h3> <a href = "https://ksn.toki.id/statistik/peserta/1366"> Kelven Nathanael </a></h3>
+                <p>KSN 2021 - TOKI 2025</p>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class = "about parallax">
+            <h1>Hello World!</h1>
+            <div class="row">
+                <div class="about-col" id = "aboutText" style="height:25vh">
+                    <p> We are TFC Fan Club, a bunch of competitive programmers from Indonesia. We actively attend programming contests - Google Codejam, Facebook Hacker Cup, and Codeforces regular contests to name a few. </p>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="about-col">
+                    <i class="fa fa-play fa-1x" onclick = "nextAbout()"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class = "contact" id="contact">
+        <h4> Contact Us </h4>
+        <div class ="contact-icons">
+            <p><a href="mailto:tfc.tfanclub@gmail.com"><i class="fa fa-envelope"></i> tfc.tfanclub@gmail.com </a></p>
+            <p><a href="https://www.instagram.com/tfc.fanclub/"><i class="fa fa-instagram" ></i> @tfc.fanclub </a></p>
+        </div>
+    </section>
+    <!-- JS -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        var aboutPage = 0;
+        var refreshCtr = 0;
+        var about = ["We are TFC Fan Club, a bunch of enthusiast competitive programmers from Indonesia. We actively attend programming contests - Google Codejam, Facebook Hacker Cup, and Codeforces regular contests to name a few.", 
+                    "Our members hail from various places such as Sumatra, Java, and even Bali. Nevertheless, we are united through our passion in Competitive Programming.",
+                    "As medalists of Indonesia's National Olympiad in Informatics and participants of Indonesia's National Team Training in preparation for IOI'22 (which will be held in our beautiful country), we are taking the initiative to make informatics more well-known and well-loved!",
+                    "We have lots of projects in mind and we cannot wait to share them with you when we're set!",
+                    "We aim to share our knowledge and passion in informatics for enthusiasts all around Indonesia. We hope that all of you can enjoy competitive programming and find joy in doing it. Best of luck! <br> - TFC"];
+        var aboutText = document.getElementById("aboutText");
+        window.setInterval('addRefreshCtr()', 1000);
+        function showMenu() {
+            navLinks.style.display = "block";
+        }
+        function hideMenu() {
+            navLinks.style.display = "none";
+        }
+        function addRefreshCtr() {
+            refreshCtr += 1
+            if (refreshCtr == 10) {
+                refreshCtr = 0;
+                nextAbout();
+            }
+        }
+        function nextAbout() {
+            aboutPage = (aboutPage + 1) % 5;
+            refreshCtr = 0;
+            aboutText.innerHTML = about[aboutPage];
+            unfade(aboutText);
+        }
+        function unfade(element) {
+            var op = 0.1;
+            element.style.display = 'block';
+            element.style.opacity = op;
+            var timer = setInterval(function () {
+                if (op >= 1){
+                    clearInterval(timer);
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op += op * 0.1;
+            }, 10);
+        }
+    </script>
+</body>
+
+</html>
